@@ -512,3 +512,9 @@ html.reveal-fullscreen #reveal-fullscreen-portal {
 .reveal.has-black .slides section.processOverview .keyInsight {
   background: rgba(59, 130, 246, 0.2) !important;
 }
+/* Homepage hero art: line art is drawn for a white page, so give it a white panel in dark mode */
+[data-theme='dark'] .hero-art {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+}

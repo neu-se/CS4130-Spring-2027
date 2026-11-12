@@ -1,22 +1,25 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex';
-import path from 'path';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+const baseUrl = process.env.BASE_URL || '/CS4130-Spring-2027/';
 
 const config: Config = {
   title: 'CS 4130: Engineering LLM-Integrated Systems',
   tagline: 'Spring 2027',
   favicon: 'img/favicon.ico',
+  headTags: [
+    { tagName: 'link', attributes: { rel: 'icon', type: 'image/png', sizes: '192x192', href: `${baseUrl}img/brand/cs4130-icon-192.png` } },
+    { tagName: 'link', attributes: { rel: 'apple-touch-icon', sizes: '180x180', href: `${baseUrl}img/brand/apple-touch-icon.png` } },
+  ],
 
   // Set the production url of your site here
   url: 'https://neu-se.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: process.env.BASE_URL || '/CS4130-Spring-2027/',
+  baseUrl,
 
   // GitHub pages deployment config.
   organizationName: 'neu-se', // Usually your GitHub org/user name.
@@ -28,64 +31,6 @@ const config: Config = {
     mermaid: true,
   },
   themes: ['@docusaurus/theme-mermaid'],
-
-  plugins: [
-    [path.resolve(__dirname, './plugins/courseasaurus/index.ts'), {
-      configPath: './course.config.json',
-      generateSchedule: true,
-      scheduleRoute: '/schedule',
-      validateLectureFiles: false, // Enable after all lectures are mapped
-    }],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'instructor-manual',
-        path: 'instructor-manual',
-        routeBasePath: 'instructor-manual',
-        editUrl: 'https://github.com/neu-se/CS4130-Spring-2027/edit/main/',
-        sidebarPath: './sidebars.ts',
-        remarkPlugins: [remarkMath],
-        rehypePlugins: [rehypeKatex],
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'labs',
-        path: 'labs',
-        routeBasePath: 'labs',
-        editUrl: 'https://github.com/neu-se/CS4130-Spring-2027/edit/main/',
-        sidebarPath: './sidebars.ts',
-        remarkPlugins: [remarkMath],
-        rehypePlugins: [rehypeKatex],
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'assignments',
-        path: 'assignments',
-        routeBasePath: 'assignments',
-        editUrl: 'https://github.com/neu-se/CS4130-Spring-2027/edit/main/',
-        sidebarPath: './sidebars.ts',
-        remarkPlugins: [remarkMath],
-        rehypePlugins: [rehypeKatex],
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'lecture-slides',
-        path: 'lecture-slides',
-        routeBasePath: 'lecture-slides',
-        editUrl: 'https://github.com/neu-se/CS4130-Spring-2027/edit/main/',
-        sidebarPath: './sidebars.ts',
-        remarkPlugins: [remarkMath],
-        rehypePlugins: [rehypeKatex],
-      },
-    ],
-  ],
-
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -99,14 +44,7 @@ const config: Config = {
     [
       '@docusaurus/preset-classic',
       {
-        docs: {
-          path: 'lecture-notes',
-          routeBasePath: 'lecture-notes',
-          sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/neu-se/CS4130-Spring-2027/edit/main/',
-          remarkPlugins: [remarkMath],
-          rehypePlugins: [rehypeKatex],
-        },
+        docs: false,
         blog: false,
         theme: {
           customCss: './src/css/custom.css',
@@ -130,55 +68,10 @@ const config: Config = {
     navbar: {
       title: 'CS 4130',
       logo: {
-        alt: 'Courseasaurus Logo',
-        src: 'img/logo.svg',
+        alt: 'CS 4130 logo: a robot with husky ears',
+        src: 'img/brand/cs4130-icon-192.png',
       },
-      items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'instructorManualSidebar',
-          docsPluginId: 'instructor-manual',
-          position: 'left',
-          label: 'Instructor Manual',
-        },
-        {
-          to: '/syllabus',
-          position: 'left',
-          label: 'Syllabus',
-        },
-        {
-          to: '/schedule',
-          position: 'left',
-          label: 'Schedule',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'lectureNotesSidebar',
-          position: 'left',
-          label: 'Lecture Notes',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'labsSidebar',
-          docsPluginId: 'labs',
-          position: 'left',
-          label: 'Labs',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'assignmentsSidebar',
-          docsPluginId: 'assignments',
-          position: 'left',
-          label: 'Assignments',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'lectureSlidesSidebar',
-          docsPluginId: 'lecture-slides',
-          position: 'left',
-          label: 'Lecture Slides',
-        }
-      ],
+      items: [],
     },
     footer: {
       style: 'dark',

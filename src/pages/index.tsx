@@ -1,9 +1,9 @@
 "use client";
 
-// DRAFT landing page for CS 4130 Spring 2027. Drop into src/pages/index.tsx of the course Docusaurus shell
-// (same layout as CS4535-Fall-2026). Items marked TODO need confirming before publishing.
+// DRAFT landing page for CS 4130 Spring 2027. Items marked TODO need confirming before publishing.
 
 import Layout from '@theme/Layout';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const prose = { lineHeight: 1.7, color: 'var(--ifm-color-emphasis-800)' };
 
@@ -14,49 +14,69 @@ export default function Home() {
 
         {/* Hero */}
         <div style={{ marginBottom: '3rem' }}>
-          {/* TODO: banner, concept TBD */}
           <h1 style={{ fontSize: '2.25rem', marginBottom: '0.25rem' }}>
             CS 4130: Engineering LLM-Integrated Systems
           </h1>
           <p style={{ fontSize: '1.1rem', color: 'var(--ifm-color-emphasis-700)', marginBottom: '1.5rem' }}>
-            Spring 2027 &middot; Prof. Jonathan Bell &middot; {/* TODO: meeting days, time, room */}TBA
+            Spring 2027 &middot; Prof. Jonathan Bell &middot; Tue/Fri 9:50–11:30 AM &middot; {/* TODO: room */}Room TBA
           </p>
+          <img
+            className="hero-art"
+            src={useBaseUrl('/img/brand/hero-copilot.webp')}
+            alt="Cartoon of a cheerful boxy robot driving a little convertible down an open road, while a husky in a red bandana rides beside it, holding the map with one paw and the brake with the other"
+            style={{ display: 'block', width: '100%', margin: '0 auto 2rem' }}
+          />
 
           <p style={prose}>
-            Wiring an LLM into a product takes an afternoon. A model call, a prompt, a demo that works on the first try. Then the hard part starts. The output changes every time you run it. It's right most of the time, and you don't know which times it's wrong. It doesn't have your data. It follows instructions hidden in the documents you hand it. It costs money on every call. And six months from now a new model comes out that makes half of what you built unnecessary, while the other half matters more than ever.
+            Wiring an LLM into a product takes an afternoon. In 1987, Fred Brooks wrote that "the hardest single part of building a software system is deciding precisely what to build." He separated that essential difficulty from the accidental difficulty of getting a design into code. AI is removing the accidental difficulty quickly, and each new model makes some of what you build today unnecessary. The essential difficulty stays with people, and it's where software still fails:
           </p>
+
+          <ul style={{ lineHeight: 1.7, color: 'var(--ifm-color-emphasis-800)' }}>
+            <li><strong>You build the wrong thing.</strong> A syllabus says "your lowest quiz score is dropped." Lowest by points or by percentage, when the quizzes are out of different totals? Does a quiz you missed count as your lowest? What about one you were excused from? Before or after late penalties? A model will pick an answer to each of these without asking you, and the demo will look fine. <em>Does your system do what its owner meant, or only what they said?</em></li>
+            <li><strong>It's wrong, and nobody can tell.</strong> The output changes from run to run and is right most of the time. The instructor who owns that policy will never read your code, so they approve what they're shown. <em>What can a person confirm without understanding the whole system?</em></li>
+            <li><strong>You can't keep up with your customers.</strong> Rules change every semester and every season, and every new client has different ones. If each change needs an engineer, the company never grows past a handful of clients. <em>When the requirements change, who has to decide: the owner, someone with more authority, or an engineer?</em></li>
+            <li><strong>You get breached, and it's your name on it.</strong> The model follows instructions hidden in the documents it reads, and an agent wrote much of the code that's supposed to stop it. <em>When an agent writes the code, who answers for it?</em></li>
+            <li><strong>It costs more than it earns.</strong> Every model call costs money. A feature that's cheap in a demo can cost more per customer than the customer pays, and model prices go up as well as down. <em>Which parts of your system belong in a model, and which belong in code?</em></li>
+          </ul>
 
           <p style={prose}>
-            This course is about that second part. You'll build a real LLM-integrated product as a team over the whole semester, measure it, attack it, run it under load, and decide what it should and shouldn't do. You'll leave knowing how to tell a demo from a system.
+            This course is about those questions. You'll build an LLM-integrated system, first on your own and then as a team, for real users with real rules. Over the semester you'll find out what those users need, measure the system, attack it, keep it within a budget, change it when they change their minds, and decide what it should and shouldn't do.
           </p>
 
-          <p style={prose}>
-            Two questions run through every week:
-          </p>
-
-          <ol style={{ fontSize: '0.95rem', color: 'var(--ifm-color-emphasis-700)', lineHeight: 1.6, paddingLeft: '1.25rem' }}>
-            <li><strong>What survives the next model?</strong> Every model release absorbs some engineering. Which parts of your work keep their value as models get better, and which parts should you stop building and wait for?</li>
-            <li><strong>Should this be built, and who is harmed when it's wrong?</strong> A better model lowers the error rate. It doesn't decide who is accountable for the errors that remain, what users need to be told, or whether a decision should be made by a model at all.</li>
-          </ol>
         </div>
 
-        {/* The ladder */}
+        {/* Topics */}
         <div style={{ marginBottom: '3rem' }}>
-          <h2>How we answer the first question: the model ladder</h2>
-          <p style={prose}>
-            You'll run the same system on several Claude models, from a model released in 2025 up to the current most capable one. Today's top model stands in for next year's cheap one. For every technique you add, whether it's a prompt pattern, a retrieval step, a tool, or a check in code, you measure how much it improves the system on each model.
-          </p>
-          <p style={prose}>
-            If that improvement shrinks as the models get better, the frontier is absorbing your technique. If it holds, you've found something worth owning. Each milestone ends with a short memo making that case with your own data. At the end of the semester you file a dated prediction about a technique the frontier will absorb within a year. Next year's class will score it.
-          </p>
+          <h2>Topics (tentative)</h2>
+          <ul style={{ lineHeight: 1.8, color: 'var(--ifm-color-emphasis-800)' }}>
+            <li><strong>How LLMs work, enough to predict them:</strong> tokens, sampling, and context; why output varies from run to run; how models are trained; which failures scaling fixes and which it doesn't</li>
+            <li><strong>Conceptual design:</strong> concepts, purposes, and synchronizations (Daniel Jackson's <em>The Essence of Software</em>), and why they matter more when an LLM writes the code</li>
+            <li><strong>Specifications as decisions:</strong> finding what a requirement leaves open, and recording which decisions are settled, assumed, unresolved, or someone else's to make</li>
+            <li><strong>Calling models from code:</strong> structured output, tools, and MCP</li>
+            <li><strong>Evaluating systems whose output varies:</strong> oracles, LLM judges and how to validate them, pass@k and pass^k, confidence intervals, comparing models</li>
+            <li><strong>LLMs as the user interface:</strong> chat, generated questions, and generated views; what a person should confirm, and how to keep them from trusting fluent text too much</li>
+            <li><strong>User research for LLM features:</strong> interviews, observation, and asking users what they'd trust a system to generate</li>
+            <li><strong>Grounding:</strong> retrieval, embeddings, long context, agentic search, and designing tools for a model to use</li>
+            <li><strong>Prompting techniques and how long they last:</strong> few-shot examples, chain of thought, program-aided prompting, measured on several models</li>
+            <li><strong>Security:</strong> prompt injection, threat models, least privilege, and enforcing policy in code</li>
+            <li><strong>Human oversight:</strong> confirmation, escalation, recovery, and who answers when the system is wrong</li>
+            <li><strong>Ethics and society:</strong> who a system affects, fairness across groups, consent, automated decisions, and AI ethics review</li>
+            <li><strong>Operating LLM systems:</strong> cost, latency, routing between models, model upgrades, and turning failures into tests</li>
+            <li><strong>The research frontier:</strong> current papers on agents, evaluation, and verification, and what newer models will make unnecessary</li>
+          </ul>
         </div>
 
-        {/* The product */}
+        {/* The project */}
         <div style={{ marginBottom: '3rem' }}>
-          <h2>The product</h2>
+          <h2>The project</h2>
           <p style={prose}>
-            {/* TODO: name the product once chosen */}
-            You'll work in an existing open-source codebase, not a blank repo, and your team adds an LLM-powered assistant to it. We'll announce the product before the semester starts. Whatever it is, it has the properties that make LLM systems hard: output that's partly checkable and partly a matter of judgment, private user data the model has never seen, untrusted content flowing in from outside, actions that affect other people, and errors that can cause real harm.
+            Every business runs on rules that only the people doing the work fully understand: how a dental office books and confirms appointments, how a contractor prices a change order, how an instructor turns a semester of work into a grade. Your team builds the software that lets those people state their own rules, connects the rules to the systems they already use, and uses an LLM where it helps without letting it decide what it shouldn't.
+          </p>
+          <p style={prose}>
+            The LLM drafts the rules from a plain-language description and asks about the cases it leaves open. Deterministic code runs the rules. The person who owns them confirms what they mean by looking at examples and generated views, not at code. Your team answers for how the pieces fit together.
+          </p>
+          <p style={prose}>
+            The standard is the same for every team: build as much of the system as you honestly can in deterministic code, with evidence that it's right. Every decision your system makes goes in an <em>assurance manifest</em>, in one of three places: deterministic with evidence, an LLM judgment with limits on what it can affect, or escalated to a person. We grade how complete the manifest is, whether each decision is in the right place, and whether your evidence catches bugs we plant.
           </p>
         </div>
 
@@ -64,51 +84,59 @@ export default function Home() {
         <div style={{ marginBottom: '3rem' }}>
           <h2>Course structure (preview)</h2>
           <p style={prose}>
-            One product, four milestones, built in teams. {/* TODO: team size */}The details will change before January. The arc won't.
+            Four milestones. The first is individual; the rest are built in teams that form in week 4. {/* TODO: team size */}The details will change before January, but the four milestones will stay.
           </p>
 
-          <h3>Milestone 1: Measure it, then make it cheaper</h3>
+          <h3>Milestone 1: Grading policies, on your own (weeks 1–4)</h3>
           <p style={prose}>
-            Take a feature the frontier already does well, build an eval set with real ground truth, and measure it across the model ladder. Then cut its cost, comparing cheaper models, classic non-LLM baselines, and cascades that combine them. Then weigh whose data and whose work the feature depends on, and what it should refuse to do.
+            Everyone builds the same thing first, individually: a TypeScript command-line tool that turns a course's grading policy, as written in its syllabus, into rules a computer can apply. The LLM drafts the policy and raises the questions the syllabus never answered. The instructor confirms each decision, and the tool shows which students a decision affects before it takes effect. The instructor is your product owner, and real grading policies, including one with the rulings its instructor had to make mid-semester, are the test cases. The tool uses the same architecture as Pawtograder's command-line tool, and it runs model calls through your own Claude Code account.
           </p>
 
-          <h3>Milestone 2: A grounded assistant</h3>
+          <h3>Milestone 2: Your own product (weeks 5–8)</h3>
           <p style={prose}>
-            Build an assistant that works over each user's own data. Compare what the model knows on its own, what it can do with retrieval, and what it can do with retrieval plus deterministic code that checks its answers. Measure whether it works equally well for every group of users.
+            Now your team is the product owner. Choose one of two tracks:
+          </p>
+          <ul style={{ lineHeight: 1.8, color: 'var(--ifm-color-emphasis-800)' }}>
+            <li><strong>Pawtograder:</strong> a feature beyond grading policies, such as creating and versioning exams, setting up programming assignments, surveys, discussion topics, or office-hours queues. Your users are instructors, TAs, and students.</li>
+            <li><strong>An external partner:</strong> a real person who does the work, whether a business owner or a roommate on a dental-assistant co-op. Partners are approved by week 4, and the system uses only synthetic data.</li>
+          </ul>
+          <p style={prose}>
+            Either way, you start with user research. Your requirements have to trace back to real users. Those users confirm the examples your system is tested against and help decide what the system should generate and what must stay in human hands.
           </p>
 
-          <h3>Milestone 3: Guarantees and red team</h3>
+          <h3>Milestone 3: Guarantees and red team (weeks 9–11)</h3>
           <p style={prose}>
-            Make some things impossible no matter what the model says: a safety violation, an unconfirmed change to data other people share. Defend against prompt injection in content that comes from outside. Then swap with another team and try to break theirs. Write up your system the way a university AI ethics review would require.
+            Make some things impossible no matter what the model says. Defend against prompt injection through your product's untrusted inputs, such as survey answers, discussion posts, or customer notes. Then swap with another team and try to break theirs. Write up your system the way a university AI ethics review would require.
           </p>
 
-          <h3>Milestone 4: Operate</h3>
+          <h3>Milestone 4: Design for change, then prove it (weeks 12–14)</h3>
           <p style={prose}>
-            Run your system against simulated users while staff inject events, such as a model upgrade or an injection campaign. Stay within a cost budget, turn failures into regression tests, and decide whether you'd ship it.
+            From Milestone 2 on, you design for change. With your users, you map the changes your system will face and choose concepts so that most of them are configuration the owner can do alone, not code you have to write. For example, an instructor should be able to invent an entirely new grading scheme in plain language, built from Pawtograder's gradebook columns, column groups, topics, assignments, review rounds, rubrics, and expression language, and confirm it without an engineer.
           </p>
-
-          <h3>Individual work</h3>
           <p style={prose}>
-            {/* TODO: confirm HA assignment */}
-            Alongside the team project, an individual assignment on smart-home agents: what guarantees an LLM-controlled home needs, and who it affects beyond the person giving the commands.
-          </p>
-
-          <h3>Reading the research</h3>
-          <p style={prose}>
-            Much of this field is only a few years old, and it changes every semester. We read and discuss current papers on evaluation, agents, and prompt injection, and every memo cites one paper whose technique your team tried.
+            In Milestone 4 your stakeholders bring challenge cases you've never seen. Before each one, you predict whether the owner can handle it alone, needs to make a new decision, or needs an engineer. Then it runs live. Either your design absorbs the change, your prediction that it needs an engineer turns out right, or you have a fire to put out: a workaround within 24 hours, a fix with new evidence, and a postmortem. Staff also run a model upgrade you have to qualify with your own evals, and you stay within a cost budget.
           </p>
         </div>
 
-        {/* What you'll learn */}
+        {/* Assessment */}
         <div style={{ marginBottom: '3rem' }}>
-          <h2>What you'll be able to do</h2>
+          <h2>Assessment (tentative)</h2>
+          <p style={prose}>
+            There are no points. Instead there are four bands, each a published list of things you have demonstrably done: <strong>Pass</strong> (trusted to build under review), <strong>Credit</strong> (trusted to exercise judgment), <strong>Distinction</strong> (trusted to own what ships), and <strong>High Distinction</strong> (trusted to extend the system). Each band requires the one below it. You declare the band you're aiming for, and at the end you make the case, with evidence, that you met it. Bands are individual, even for team work.
+          </p>
+          <p style={prose}>
+            {/* TODO: final band requirements in the syllabus */}
+            The evidence comes from:
+          </p>
           <ul style={{ lineHeight: 1.8, color: 'var(--ifm-color-emphasis-800)' }}>
-            <li>Explain how an LLM produces output well enough to predict which failures the next model will fix and which it won't</li>
-            <li>Define "correct" for fuzzy output, and build evals that hold up when the same input gives a different answer every run</li>
-            <li>Connect a model to data and tools it can't otherwise reach, through retrieval and MCP</li>
-            <li>Enforce safety and policy in code at the tool boundary, then attack your own defenses</li>
-            <li>Track cost and latency, route between models, and qualify a model upgrade with your own evals</li>
-            <li>Identify who a system affects, weigh the harms, and make the case for or against deploying it</li>
+            <li><strong>Milestone 1:</strong> your own grading-policy tool, accepted or sent back by the product owner, and tested on cases you haven't seen.</li>
+            <li><strong>The assurance manifest:</strong> complete at every milestone, with entries you own by name.</li>
+            <li><strong>Code walks:</strong> at every milestone a TA picks a decision you own, and you trace it from the manifest to the evidence to the code.</li>
+            <li><strong>User research:</strong> requirements that trace back to real users, and acceptance examples they confirmed.</li>
+            <li><strong>The red team:</strong> whether your guarantees held, and what you found in another team's system.</li>
+            <li><strong>The challenge sessions:</strong> changes your design absorbed, predictions you got right, and fires you put out.</li>
+            <li><strong>Memos and the prediction:</strong> a memo at each milestone backed by your measurements, and a dated prediction that next year's class will score.</li>
+            <li><strong>Participation:</strong> come to every session prepared, having done the reading and ready to work. You can miss up to two weeks of sessions (four sessions) over the semester without it affecting your grade. Beyond that, your letter grade is capped, whatever band you reach. There is a procedure for exceptions such as illness or emergencies, but don't plan on it.</li>
           </ul>
         </div>
 
@@ -116,31 +144,11 @@ export default function Home() {
         <div style={{ marginBottom: '3rem' }}>
           <h2>Logistics</h2>
           <ul style={{ lineHeight: 1.8, color: 'var(--ifm-color-emphasis-800)' }}>
-            <li><strong>Prerequisites:</strong> {/* TODO: catalog prereqs */}TBA</li>
+            <li><strong>Prerequisites:</strong> CS 3000, CS 3100, CS 3500, or DS 3500. This is a programming-intensive course, and you should already be proficient at programming and testing software that doesn't use LLMs. We'll work mostly in TypeScript, but you don't need prior TypeScript experience.</li>
             <li><strong>Compute:</strong> no GPUs needed. You'll call models through Claude Code on your Northeastern account, and team deployments run on the course cluster.</li>
-            <li><strong>AI use:</strong> {/* TODO: AI policy (open decision) */}to be announced with the syllabus.</li>
+            <li><strong>AI use:</strong> required. You'll build with coding agents throughout the course, and part of the work is reviewing what they write and answering for it.</li>
             <li><strong>Not covered:</strong> training or fine-tuning models. We'll discuss when fine-tuning pays off, but you won't do it.</li>
           </ul>
-        </div>
-
-        {/* FAQ */}
-        <div style={{ marginBottom: '3rem' }}>
-          <h2>Common questions</h2>
-
-          <h3>I took CS 4535. Is this more of the same?</h3>
-          <p style={prose}>
-            Some of the setup will feel familiar: an existing codebase, deployments on the cluster, staff-injected incidents. The content is different. 4535 is about engineering and operating a large system as a team. In 4130 the hard part is the model: defining correct for output that's never quite the same twice, figuring out why it failed, deciding what to fix in code and what to wait on, and deciding whether it should be making the decision at all.
-          </p>
-
-          <h3>Is this a machine learning course?</h3>
-          <p style={prose}>
-            No. You won't train models. You'll learn enough about how they're trained and how they generate text to reason about their behavior, and the rest of the semester is about the software around them.
-          </p>
-
-          <h3>How is this different from the Fall 2025 offering?</h3>
-          <p style={prose}>
-            Arjun Guha's 2025 version covered prompting, fine-tuning on GPUs, agents, and evals through a series of two-person projects. This version keeps the prompting, agent, and eval material, drops hands-on training, and replaces the separate projects with one product built over the semester.
-          </p>
         </div>
 
       </div>
