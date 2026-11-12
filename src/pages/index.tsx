@@ -28,7 +28,7 @@ export default function Home() {
           />
 
           <p style={prose}>
-            Wiring an LLM into a product takes an afternoon. In 1987, Fred Brooks wrote that "the hardest single part of building a software system is deciding precisely what to build." He separated that essential difficulty from the accidental difficulty of getting a design into code. AI is removing the accidental difficulty quickly, and each new model makes some of what you build today unnecessary. The essential difficulty stays with people, and it's where software still fails:
+            Wiring an LLM into a product takes an afternoon. Building software that people keep using, and that does real good for them and for everyone else it touches, is as hard as it ever was. An LLM adds new ways to fail:
           </p>
 
           <ul style={{ lineHeight: 1.7, color: 'var(--ifm-color-emphasis-800)' }}>
