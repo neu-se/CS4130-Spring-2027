@@ -84,15 +84,15 @@ export default function Home() {
         <div style={{ marginBottom: '3rem' }}>
           <h2>Course structure (preview)</h2>
           <p style={prose}>
-            Four milestones. The first is individual; the rest are built in teams that form in week 3. {/* TODO: team size */}The details will change before January, but the four milestones will stay.
+            The project runs on a two-week cycle, with something due at the end of each one. The first two weeks are individual. After that you work in teams that form in week 3. {/* TODO: team size */}The details will change before January.
           </p>
 
-          <h3>Milestone 1: Grading policies, on your own (weeks 1–2)</h3>
+          <h3>Weeks 1–2: Grading policies, on your own</h3>
           <p style={prose}>
             Everyone builds the same thing first, individually: a TypeScript command-line tool that turns a course's grading policy, as written in its syllabus, into rules a computer can apply. The LLM drafts the policy and raises the questions the syllabus never answered. The instructor confirms each decision, and the tool shows which students a decision affects before it takes effect. The instructor is your product owner, and real grading policies, including one with the rulings its instructor had to make mid-semester, are the test cases. The tool uses the same architecture as Pawtograder's command-line tool, and it runs model calls through your own Claude Code account.
           </p>
 
-          <h3>Milestone 2: Your own product (weeks 3–7)</h3>
+          <h3>Weeks 3–9: Your own product</h3>
           <p style={prose}>
             Now your team is the product owner. Choose one of two tracks:
           </p>
@@ -103,18 +103,16 @@ export default function Home() {
           <p style={prose}>
             Either way, you start with user research. Your requirements have to trace back to real users. Those users confirm the examples your system is tested against and help decide what the system should generate and what must stay in human hands.
           </p>
-
-          <h3>Milestone 3: Guarantees and red team (weeks 8–10)</h3>
           <p style={prose}>
-            Make some things impossible no matter what the model says. Defend against prompt injection through your product's untrusted inputs, such as survey answers, discussion posts, or customer notes. Then swap with another team and try to break theirs. Write up your system the way a university AI ethics review would require.
-          </p>
-
-          <h3>Milestone 4: Design for change, then prove it (weeks 11–14)</h3>
-          <p style={prose}>
-            From Milestone 2 on, you design for change. With your users, you map the changes your system will face and choose concepts so that most of them are configuration the owner can do alone, not code you have to write. For example, an instructor should be able to invent an entirely new grading scheme in plain language, built from Pawtograder's gradebook columns, column groups, topics, assignments, review rounds, rubrics, and expression language, and confirm it without an engineer.
+            You also design for change. With your users, you map the changes your system will face and choose concepts so that most of them are configuration the owner can do alone, not code you have to write. For example, an instructor should be able to invent an entirely new grading scheme in plain language, built from Pawtograder's gradebook columns, column groups, topics, assignments, review rounds, rubrics, and expression language, and confirm it without an engineer. Some things your system must make impossible no matter what the model says, and you write it up the way a university AI ethics review would require.
           </p>
           <p style={prose}>
-            In Milestone 4 your stakeholders bring challenge cases you've never seen. Before each one, you predict whether the owner can handle it alone, needs to make a new decision, or needs an engineer. Then it runs live. Either your design absorbs the change, your prediction that it needs an engineer turns out right, or you have a fire to put out: a workaround within 24 hours, a fix with new evidence, and a postmortem. Staff also run a model upgrade you have to qualify with your own evals, and you stay within a cost budget.
+            Deliverables in weeks 4, 6, and 8 take your product from research to a working system. In week 9 you demo it.
+          </p>
+
+          <h3>Weeks 10–14: Break it, then make it better</h3>
+          <p style={prose}>
+            For the rest of the semester, two things happen at once. Teams test each other's systems adversarially, looking for ways to make them do what they shouldn't. And your stakeholders put your system to work, bring changes you haven't planned for, and tell you what isn't working, and you iterate on what they tell you. Deliverables continue every two weeks.
           </p>
         </div>
 
@@ -129,13 +127,13 @@ export default function Home() {
             The evidence comes from:
           </p>
           <ul style={{ lineHeight: 1.8, color: 'var(--ifm-color-emphasis-800)' }}>
-            <li><strong>Milestone 1:</strong> your own grading-policy tool, accepted or sent back by the product owner, and tested on cases you haven't seen.</li>
-            <li><strong>The assurance manifest:</strong> complete at every milestone, with entries you own by name.</li>
-            <li><strong>Code walks:</strong> at every milestone a TA picks a decision you own, and you trace it from the manifest to the evidence to the code.</li>
+            <li><strong>Your individual tool:</strong> your own grading-policy tool, accepted or sent back by the product owner, and tested on cases you haven't seen.</li>
+            <li><strong>The assurance manifest:</strong> kept current at every deliverable, with entries you own by name.</li>
+            <li><strong>Code walks:</strong> throughout the semester a TA picks a decision you own, and you trace it from the manifest to the evidence to the code.</li>
             <li><strong>User research:</strong> requirements that trace back to real users, and acceptance examples they confirmed.</li>
-            <li><strong>The red team:</strong> whether your guarantees held, and what you found in another team's system.</li>
-            <li><strong>The challenge sessions:</strong> changes your design absorbed, predictions you got right, and fires you put out.</li>
-            <li><strong>Memos and the prediction:</strong> a memo at each milestone backed by your measurements, and a dated prediction that next year's class will score.</li>
+            <li><strong>Adversarial testing:</strong> whether your system held up, and what you found in another team's.</li>
+            <li><strong>Stakeholder feedback:</strong> how your system handled the changes your users brought, and what you changed in response.</li>
+            <li><strong>Memos and the prediction:</strong> a memo with each deliverable backed by your measurements, and a dated prediction that next year's class will score.</li>
             <li><strong>Participation:</strong> you'll build with AI throughout this course, which makes the time we spend together in person matter more. Sessions are highly interactive, and each one includes a worksheet you complete in class. Come prepared, having done the reading. You can have up to two weeks of unexcused absences (four sessions) without it affecting your grade. Beyond that, your letter grade is capped, whatever band you reach. There is a procedure for excused absences such as illness or emergencies, but don't plan on it.</li>
             <li><strong>Worksheets are yours alone:</strong> you complete your own worksheet, in the room. If you turn in a worksheet for a classmate who isn't there, or ask someone to turn one in for you, both students receive an F for the course and are referred to the Office of Student Conduct and Conflict Resolution (OSCCR). OSCCR's sanctions can include losing eligibility for future co-ops.</li>
             <li><strong>Devices:</strong> for the same reason, no laptops, tablets, or phones in class unless you have an accommodation on file with Disability Access Services (DAS).</li>
