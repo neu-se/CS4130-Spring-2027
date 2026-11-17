@@ -136,8 +136,8 @@ export default function Home() {
             <li><strong>The red team:</strong> whether your guarantees held, and what you found in another team's system.</li>
             <li><strong>The challenge sessions:</strong> changes your design absorbed, predictions you got right, and fires you put out.</li>
             <li><strong>Memos and the prediction:</strong> a memo at each milestone backed by your measurements, and a dated prediction that next year's class will score.</li>
-            <li><strong>Participation:</strong> sessions are highly interactive, and each one includes a worksheet you complete in class. Come prepared, having done the reading. You can have up to two weeks of unexcused absences (four sessions) without it affecting your grade. Beyond that, your letter grade is capped, whatever band you reach. There is a procedure for excused absences such as illness or emergencies, but don't plan on it.</li>
-            <li><strong>Devices:</strong> no laptops, tablets, or phones in class unless you have an accommodation on file with the Disability Resource Center (DRC).</li>
+            <li><strong>Participation:</strong> you'll build with AI throughout this course, which makes the time we spend together in person matter more. Sessions are highly interactive, and each one includes a worksheet you complete in class. Come prepared, having done the reading. You can have up to two weeks of unexcused absences (four sessions) without it affecting your grade. Beyond that, your letter grade is capped, whatever band you reach. There is a procedure for excused absences such as illness or emergencies, but don't plan on it.</li>
+            <li><strong>Devices:</strong> for the same reason, no laptops, tablets, or phones in class unless you have an accommodation on file with the Disability Resource Center (DRC).</li>
           </ul>
         </div>
 
