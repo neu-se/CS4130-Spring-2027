@@ -40,7 +40,7 @@ export default function Home() {
           </ul>
 
           <p style={prose}>
-            This course is about those questions. You'll build an LLM-integrated system, first on your own and then as a team, for real users with real rules. Over the semester you'll find out what those users need, measure the system, attack it, keep it within a budget, change it when they change their minds, and decide what it should and shouldn't do.
+            This course is about those questions. You'll build an LLM-integrated system, first on your own and then as a team, for real users with real rules. Over the semester you'll find out what those users need, measure the system, and attack it. You'll keep it within a budget, change it when your users change their minds, and decide what it should and shouldn't do.
           </p>
 
         </div>
@@ -104,15 +104,15 @@ export default function Home() {
             Either way, you start with user research. Your requirements have to trace back to real users. Those users confirm the examples your system is tested against and help decide what the system should generate and what must stay in human hands.
           </p>
           <p style={prose}>
-            You also design for change. With your users, you map the changes your system will face and choose concepts so that most of them are configuration the owner can do alone, not code you have to write. For example, an instructor should be able to invent an entirely new grading scheme in plain language, built from Pawtograder's gradebook columns, column groups, topics, assignments, review rounds, rubrics, and expression language, and confirm it without an engineer. Some things your system must make impossible no matter what the model says, and you write it up the way a university AI ethics review would require.
+            You also design for change. With your users, you map the changes your system will face and choose concepts so that most of them are configuration the owner can do alone, not code you have to write. For example, an instructor should be able to invent an entirely new grading scheme in plain language, built from Pawtograder's gradebook columns, column groups, topics, assignments, review rounds, rubrics, and expression language, and confirm it without an engineer. Your system must also make some things impossible no matter what the model says. You write the system up the way a university AI ethics review would require.
           </p>
           <p style={prose}>
-            Deliverables in weeks 4, 6, and 8 take your product from research to a working system. In week 9 you demo it.
+            You turn in deliverables in weeks 4, 6, and 8 as your product goes from research to a working system. In week 9 you demo it.
           </p>
 
           <h3>Weeks 10–14: Break it, then make it better</h3>
           <p style={prose}>
-            For the rest of the semester, two things happen at once. Teams test each other's systems adversarially, looking for ways to make them do what they shouldn't. And your stakeholders put your system to work, bring changes you haven't planned for, and tell you what isn't working, and you iterate on what they tell you. Deliverables continue every two weeks.
+            For the rest of the semester, teams test each other's systems adversarially, looking for ways to make them do what they shouldn't. Meanwhile, your stakeholders put your system to work and bring changes you haven't planned for. You iterate on what they tell you. Deliverables continue every two weeks.
           </p>
         </div>
 
