@@ -138,7 +138,7 @@ export default function Home() {
             <li><strong>Memos and the prediction:</strong> a memo at each milestone backed by your measurements, and a dated prediction that next year's class will score.</li>
             <li><strong>Participation:</strong> you'll build with AI throughout this course, which makes the time we spend together in person matter more. Sessions are highly interactive, and each one includes a worksheet you complete in class. Come prepared, having done the reading. You can have up to two weeks of unexcused absences (four sessions) without it affecting your grade. Beyond that, your letter grade is capped, whatever band you reach. There is a procedure for excused absences such as illness or emergencies, but don't plan on it.</li>
             <li><strong>Worksheets are yours alone:</strong> you complete your own worksheet, in the room. If you turn in a worksheet for a classmate who isn't there, or ask someone to turn one in for you, both students receive an F for the course and are referred to the Office of Student Conduct and Conflict Resolution (OSCCR). OSCCR's sanctions can include losing eligibility for future co-ops.</li>
-            <li><strong>Devices:</strong> for the same reason, no laptops, tablets, or phones in class unless you have an accommodation on file with the Disability Resource Center (DRC).</li>
+            <li><strong>Devices:</strong> for the same reason, no laptops, tablets, or phones in class unless you have an accommodation on file with Disability Access Services (DAS).</li>
           </ul>
         </div>
 
