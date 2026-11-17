@@ -84,32 +84,32 @@ export default function Home() {
         <div style={{ marginBottom: '3rem' }}>
           <h2>Course structure (preview)</h2>
           <p style={prose}>
-            Four milestones. The first is individual; the rest are built in teams that form in week 4. {/* TODO: team size */}The details will change before January, but the four milestones will stay.
+            Four milestones. The first is individual; the rest are built in teams that form in week 3. {/* TODO: team size */}The details will change before January, but the four milestones will stay.
           </p>
 
-          <h3>Milestone 1: Grading policies, on your own (weeks 1–4)</h3>
+          <h3>Milestone 1: Grading policies, on your own (weeks 1–2)</h3>
           <p style={prose}>
             Everyone builds the same thing first, individually: a TypeScript command-line tool that turns a course's grading policy, as written in its syllabus, into rules a computer can apply. The LLM drafts the policy and raises the questions the syllabus never answered. The instructor confirms each decision, and the tool shows which students a decision affects before it takes effect. The instructor is your product owner, and real grading policies, including one with the rulings its instructor had to make mid-semester, are the test cases. The tool uses the same architecture as Pawtograder's command-line tool, and it runs model calls through your own Claude Code account.
           </p>
 
-          <h3>Milestone 2: Your own product (weeks 5–8)</h3>
+          <h3>Milestone 2: Your own product (weeks 3–7)</h3>
           <p style={prose}>
             Now your team is the product owner. Choose one of two tracks:
           </p>
           <ul style={{ lineHeight: 1.8, color: 'var(--ifm-color-emphasis-800)' }}>
             <li><strong>Pawtograder:</strong> a feature beyond grading policies, such as creating and versioning exams, setting up programming assignments, surveys, discussion topics, or office-hours queues. Your users are instructors, TAs, and students.</li>
-            <li><strong>An external partner:</strong> a real person who does the work, whether a business owner or a roommate on a dental-assistant co-op. Partners are approved by week 4, and the system uses only synthetic data.</li>
+            <li><strong>An external partner:</strong> a real person who does the work, whether a business owner or a roommate on a dental-assistant co-op. Partners are approved by week 3, and the system uses only synthetic data.</li>
           </ul>
           <p style={prose}>
             Either way, you start with user research. Your requirements have to trace back to real users. Those users confirm the examples your system is tested against and help decide what the system should generate and what must stay in human hands.
           </p>
 
-          <h3>Milestone 3: Guarantees and red team (weeks 9–11)</h3>
+          <h3>Milestone 3: Guarantees and red team (weeks 8–10)</h3>
           <p style={prose}>
             Make some things impossible no matter what the model says. Defend against prompt injection through your product's untrusted inputs, such as survey answers, discussion posts, or customer notes. Then swap with another team and try to break theirs. Write up your system the way a university AI ethics review would require.
           </p>
 
-          <h3>Milestone 4: Design for change, then prove it (weeks 12–14)</h3>
+          <h3>Milestone 4: Design for change, then prove it (weeks 11–14)</h3>
           <p style={prose}>
             From Milestone 2 on, you design for change. With your users, you map the changes your system will face and choose concepts so that most of them are configuration the owner can do alone, not code you have to write. For example, an instructor should be able to invent an entirely new grading scheme in plain language, built from Pawtograder's gradebook columns, column groups, topics, assignments, review rounds, rubrics, and expression language, and confirm it without an engineer.
           </p>
